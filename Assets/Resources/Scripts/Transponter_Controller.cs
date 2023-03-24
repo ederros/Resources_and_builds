@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//transporters need to move a resource from storage 'a' to storage 'b'
 public class Transponter_Controller : MonoBehaviour
 {
     public static Transporters_Manager manager;
@@ -27,11 +28,10 @@ public class Transponter_Controller : MonoBehaviour
         new_trans.transform.rotation = contained.rotation;
         
         contained.parent = new_trans.transform;
+
         TC.index = index;
         TC.target = target;
         TC.destination = destination;
-        
-        //Debug.Log(destination+ " "+target);
         TC.new_parent = parent;
         TC.Reborn();
         return TC;
